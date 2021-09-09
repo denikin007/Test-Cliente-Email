@@ -5,10 +5,12 @@
 package controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sales.market.dto.DtoBase;
-import com.sales.market.exception.InternalErrorException;
-import com.sales.market.model.ModelBase;
-import com.sales.market.service.GenericService;
+
+
+import com.promotion.dto.DtoBase;
+import com.promotion.exception.InternalErrorException;
+import com.promotion.model.ModelBase;
+import com.promotion.service.GenericService;
 import io.micrometer.core.instrument.util.IOUtils;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;

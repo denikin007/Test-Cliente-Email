@@ -1,6 +1,11 @@
 package com.promotion.service;
 
 import com.promotion.model.Customer;
+import com.promotion.repository.CustomerRepository;
 
-public interface CustomerService extends GenericService<Customer>{
+public class CustomerService{
+    public final CustomerRepository repository;
+    public CustomerService(CustomerRepository repository){
+        this.repository = repository;
+    }
 }
