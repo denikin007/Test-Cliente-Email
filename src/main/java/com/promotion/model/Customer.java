@@ -5,14 +5,15 @@ import com.promotion.dto.CustomerDto;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import java.time.LocalDate;
+import java.util.Date;
+
 @Entity
 public class Customer extends ModelBase<CustomerDto>{
 
     @Column
     private String nombre;
     @Column
-    private LocalDate birthday;
+    private Date birthday;
 
     public String getNombre() {
         return nombre;
@@ -22,11 +23,11 @@ public class Customer extends ModelBase<CustomerDto>{
         this.nombre = nombre;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 }

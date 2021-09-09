@@ -2,11 +2,11 @@ package com.promotion.dto;
 
 import com.promotion.model.Customer;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 public class CustomerDto extends DtoBase<Customer>{
     private String nombre;
-    private LocalDate birthday;
+    private Date birthday;
 
     public String getNombre() {
         return nombre;
@@ -16,11 +16,11 @@ public class CustomerDto extends DtoBase<Customer>{
         this.nombre = nombre;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 }
