@@ -3,9 +3,9 @@ package com.promotion.service;
 import com.promotion.model.Customer;
 import com.promotion.repository.CustomerRepository;
 
-public class CustomerService{
-    public final CustomerRepository repository;
-    public CustomerService(CustomerRepository repository){
-        this.repository = repository;
-    }
+import java.util.Date;
+import java.util.List;
+
+public interface CustomerService extends GenericService<Customer>{
+    List<Customer> getCustomerByBirthday(Date date);
 }

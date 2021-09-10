@@ -9,25 +9,11 @@ import com.promotion.service.GenericService;
 import java.util.Date;
 import java.util.List;
 
-public class PromotionService{
-    private final PromotionRepository promotionRepository;
-    private final CustomerRepository customerRepository;
+public interface PromotionService extends GenericService<Promotion>{
 
-    PromotionService(PromotionRepository promotionRepository, CustomerRepository customerRepository){
-        this.promotionRepository = promotionRepository;
-        this.customerRepository = customerRepository;
-    }
+    Promotion save(Promotion promotion);
 
-    public Promotion save(Promotion promotion){
-        return promotionRepository.save(promotion);
-    }
-    public List<Customer> getCustomerByBirthdate(Date date){
-        List<Customer> customerAll = customerRepository.getCustomerByBirthday(date);
+    List<Customer> getCustomerByBirthdate(Date date);
 
-        return null;
-    }
-
-    public void sendMessage(){
-
-    }
+    void sendMessage(Long id);
 }

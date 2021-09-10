@@ -4,6 +4,8 @@ import com.promotion.dto.PromotionDto;
 import com.promotion.model.Promotion;
 import com.promotion.service.GenericService;
 import com.promotion.service.PromotionService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +20,10 @@ public class PromotionController extends GenericController<Promotion, PromotionD
     @Override
     protected GenericService getService() {
         return (GenericService) service;
+    }
+
+    @GetMapping(value = "/promotion/birthday/{idPromotion}")
+    public void getBirthday(@PathVariable("idPromotion") Long idPromotion) {
+        service.sendMessage(idPromotion);
     }
 }
