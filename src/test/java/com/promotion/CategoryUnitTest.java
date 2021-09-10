@@ -14,7 +14,7 @@ import static org.testng.Assert.*;
 public class CategoryUnitTest {
 
     @Test
-    public void pruebaOne(){
+    public void givenCategoryDTOWithCodeLengthLessThanMinimunSizeWhenCategoryDTO(){
         CategoryDto categoryDto = new CategoryDto();
         boolean sanitizado = false;
         categoryDto.setCode("ABC");
@@ -34,7 +34,7 @@ public class CategoryUnitTest {
     }
 
     @Test
-    public void pruebaTwo(){
+    public void validateCategoryDTO_validateUncheckedThenUncheckedErrorShouldBeThrown(){
         assertThrows(RuntimeException.class, () -> {
             CategoryDto categoryDto = new CategoryDto();
             categoryDto.setCode("ABC");
@@ -45,11 +45,12 @@ public class CategoryUnitTest {
     }
 
     @Test
-    public void pruebaThree(){
+    public void validateCheckedThenCheckedErrorShouldBeThrown(){
         assertThrows(Exception.class, () -> {
             CategoryDto categoryDto = new CategoryDto();
             categoryDto.setCode("ABC");
-            boolean resultadoObtenido = categoryDto.validateChecked();
+            boolean resultadoObtenido = false;
+            resultadoObtenido = categoryDto.validateChecked();
             assertEquals(resultadoObtenido,false);
         });
     }
