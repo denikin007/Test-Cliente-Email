@@ -5,17 +5,20 @@ import com.promotion.model.Promotion;
 import com.promotion.repository.CustomerRepository;
 import com.promotion.repository.GenericRepository;
 import com.promotion.repository.PromotionRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-
+import java.util.*;
+@Service
 public class PromotionServiceImpl extends GenericServiceImpl<Promotion> implements PromotionService{
     private final PromotionRepository promotionRepository;
     private final CustomerService customerService;
+    private final CustomerRepository customerRepository;
 
-    PromotionServiceImpl(PromotionRepository promotionRepository, CustomerService customerService){
+    PromotionServiceImpl(PromotionRepository promotionRepository, CustomerService customerService,CustomerRepository customerRepository){
         this.promotionRepository = promotionRepository;
         this.customerService = customerService;
+        this.customerRepository = customerRepository;
     }
 
     @Override
@@ -30,9 +33,8 @@ public class PromotionServiceImpl extends GenericServiceImpl<Promotion> implemen
 
     @Override
     public List<Customer> getCustomerByBirthdate(Date date){
-        List<Customer> customerAll = customerService.getCustomerByBirthday(date);
-
-        return null;
+        List<Customer> customerAll;
+        return customerService.getCustomerByBirthday(date);
     }
 
     @Override

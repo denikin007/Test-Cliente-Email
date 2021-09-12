@@ -2,7 +2,7 @@
  * @author: Edson A. Terceros T.
  */
 
-package controller;
+package com.promotion.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
