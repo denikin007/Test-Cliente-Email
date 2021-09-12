@@ -2,25 +2,34 @@ package com.promotion.dto;
 
 import com.promotion.model.Customer;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class CustomerDto extends DtoBase<Customer>{
-    private String nombre;
-    private Date birthday;
+    private String name;
+    private LocalDate birthday;
+    private String email;
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String nombre) {
+        this.name = nombre;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
