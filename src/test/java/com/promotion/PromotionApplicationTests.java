@@ -16,6 +16,10 @@ import reactor.core.publisher.Mono;
 
 import java.nio.charset.StandardCharsets;
 import java.time.ZonedDateTime;
+import java.util.List;
+
+import static org.testng.Assert.*;
+
 
 @SpringBootTest
 class PromotionApplicationTests {
@@ -53,10 +57,10 @@ class PromotionApplicationTests {
 
 //        Mono<Customer[]> response = headersSpec.retrieve()
 //                .bodyToMono(Customer[].class);
-        Object customerList = res.block();
+        List<Customer> customerList = (List<Customer>) res.block();
         System.out.println("--------FIN--------");
         System.out.println(customerList);
-
+        assertEquals(2,customerList.size());
     }
 
 }
