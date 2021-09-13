@@ -56,6 +56,7 @@ class PromotionApplicationTests {
         Object customerList = res.block();
         System.out.println("--------FIN--------");
         System.out.println(customerList);
+
     }
 
 }
